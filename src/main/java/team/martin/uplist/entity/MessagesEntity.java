@@ -1,6 +1,8 @@
 package team.martin.uplist.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -27,4 +29,9 @@ public class MessagesEntity {
     @Column
     private Long total_ups;
 
+    @PrePersist
+    void preInsert() {
+        if (this.total_ups == null)
+            this.total_ups = 0L;
+    }
 }
