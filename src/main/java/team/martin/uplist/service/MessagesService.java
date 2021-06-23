@@ -21,12 +21,19 @@ public class MessagesService {
     /*
      * Criará as mensagens recebidas para o banco de dados.
      */
-    public MessagesEntity createMessage(MessagesEntity message) {
+    public MessagesEntity createMessage(MessagesEntity message) throws Exception {
+        if (message.getMessage().isEmpty()){
+            throw new Exception();
+        }
         return messagesRepository.save(message);
     }
 
     public List<MessagesEntity> listMessages() {
-        return messagesRepository.findAll();
+        return messagesRepository.findByOrderByReactionsDesc();
+    }
+
+    public void removeMessage(Long id){
+        messagesRepository.deleteById(id);
     }
 
     // REACTIONS (Service)
@@ -37,8 +44,8 @@ public class MessagesService {
      */
     public void addReaction(Long id) {
         MessagesEntity messagesEntity = messagesRepository.getById(id);
-        Long total = messagesEntity.getTotal_ups() + 1;
-        messagesEntity.setTotal_ups(total);
+        long total = messagesEntity.getReactions() + 1;
+        messagesEntity.setReactions(total);
         messagesRepository.save(messagesEntity);
     }
 
@@ -48,8 +55,8 @@ public class MessagesService {
      */
     public void removeReaction(Long id) {
         MessagesEntity messagesEntity = messagesRepository.getById(id);
-        Long total = messagesEntity.getTotal_ups() - 1;
-        messagesEntity.setTotal_ups(total);
+        long total = messagesEntity.getReactions() - 1;
+        messagesEntity.setReactions(total);
         messagesRepository.save(messagesEntity);
     }
 }
