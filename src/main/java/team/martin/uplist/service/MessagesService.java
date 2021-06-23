@@ -16,8 +16,11 @@ public class MessagesService {
         this.messagesRepository = messagesRepository;
     }
 
-    // Messages (Service)
+    // MENSAGEM (Service)
 
+    /*
+     * Criará as mensagens recebidas para o banco de dados.
+     */
     public MessagesEntity createMessage(MessagesEntity message) {
         return messagesRepository.save(message);
     }
@@ -26,8 +29,12 @@ public class MessagesService {
         return messagesRepository.findAll();
     }
 
-    // Reactions (Service)
+    // REACTIONS (Service)
 
+    /*
+     * Adiciona as reações esperando a ID fornecida pelo controller e incrementando + 1,
+     * Após, salvando o mesmo para atualizar a mudança.
+     */
     public void addReaction(Long id) {
         MessagesEntity messagesEntity = messagesRepository.getById(id);
         Long total = messagesEntity.getTotal_ups() + 1;
@@ -35,6 +42,10 @@ public class MessagesService {
         messagesRepository.save(messagesEntity);
     }
 
+    /*
+     * Remove as reações esperando a ID fornecida pelo controller e diminuindo - 1,
+     * Após, salvando o mesmo para atualizar a mudança.
+     */
     public void removeReaction(Long id) {
         MessagesEntity messagesEntity = messagesRepository.getById(id);
         Long total = messagesEntity.getTotal_ups() - 1;

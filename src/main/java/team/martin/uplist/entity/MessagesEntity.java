@@ -1,16 +1,11 @@
 package team.martin.uplist.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Getter
@@ -29,6 +24,12 @@ public class MessagesEntity {
     @Column
     private Long total_ups;
 
+
+    /*
+     * Antes da inclusão na tabela se a variável total_ups entrar como nula, ele irá
+     * definir pra 0 Long, podendo sim definir na variável diretamente mas apenas aplicando essa função para
+     * aprendizado.
+     */
     @PrePersist
     void preInsert() {
         if (this.total_ups == null)
