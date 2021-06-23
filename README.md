@@ -6,7 +6,7 @@
 
 ⚙️ **Sobre**
 
-O projeto consiste em uma página onde você pode colocar qualquer tipo de texto e poderá votar em textos existentes.
+O projeto consiste em uma página onde você pode colocar qualquer tipo de texto e reagir em textos criados por outros usuários.
 
 ⚙️ **Tecnologias utilizadas**
 
