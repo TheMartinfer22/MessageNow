@@ -1,7 +1,7 @@
 # Projeto UpList
 
 
-⚠️ `Projeto em construçã`o ⚠️
+⚠️ `Projeto em construção` ⚠️
 
 
 ⚙️ **Sobre**
