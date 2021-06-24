@@ -1,27 +1,32 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { Component } from "react";
 import "./css/styles.css"
 
-const EscreverMensagem = () => {
+class EscreverMensagem extends Component {
 
-    const [mensagens, setMensagens] = useState("");
-
-    function postMessage() {
-        if (mensagens.length === 0) {
-            return (
-                alert("Você não pode deixar o campo vazio")
-            )
-        }
-        axios.post("http://localhost:8080/", {
-            message: mensagens
-        })
+    constructor(props) {
+        super(props);
+        this.texto = "";
     }
 
-return (
-    <form class="form-write-message">
-        <textarea maxLength="200" placeholder="Escreva sua mensagem..." type="text" onChange={(event) => setMensagens(event.target.value)} />
-        <button onClick={() => postMessage()}>Enviar</button>
-    </form>
-);
+    _handlerMudancaTexto(evento) {
+        this.texto = evento.target.value;
+    }
+
+    _postMessage(evento) {
+//        evento.preventDefault();
+//        evento.stopPropagation();
+        this.props.criarMensagem(this.texto);
+    }
+
+    render() {
+        return (
+            <form className="form-write-message"
+            onChange={this._handlerMudancaTexto.bind(this)} 
+            onSubmit={this._postMessage.bind(this)}>
+                <textarea className="not_selected" maxLength="200" placeholder="Escreva sua mensagem..." type="text"/>
+                <button className="not_selected">Enviar</button>
+            </form>
+        );
+    }
 }
 export default EscreverMensagem;
