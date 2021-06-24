@@ -6,23 +6,24 @@ import "./css/styles.css"
 const ListarMensagens = () => {
 
     const [mensagens, setMensagens] = useState([])
-    axios.get("http://localhost:8080/").then(response => setMensagens(response.data))
 
-    useEffect(() => {}, []);
+
+    useEffect(() => {
+        axios.get("http://localhost:8080/").then(response => setMensagens(response.data))
+    }, []);
 
 
     return (
         <div class="message-box">
 
             {
-                mensagens.map((mensagem, id) => {
+                mensagens.map((mensagem, index) => {
                     return (
-                        <Mensagem message={mensagem}key={id} />
+                        <Mensagem message={mensagem}key={index} />
                     )
                 })
             }
             </div>
-
     );
 }
 
