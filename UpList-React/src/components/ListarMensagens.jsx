@@ -1,29 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Mensagem from "./Mensagem"
 import axios from "axios";
 import "./css/styles.css"
+import { useEffect } from "react";
 
 const ListarMensagens = () => {
 
     const [mensagens, setMensagens] = useState([])
 
+//    React.useEffect(() => {
+//        const timeoutID = window.setTimeout(() => {
+//            axios.get("http://localhost:8080/").then(response => setMensagens(response.data))
+//        }, 500);
+//        return () => window.clearTimeout(timeoutID);
+//    });
 
     useEffect(() => {
         axios.get("http://localhost:8080/").then(response => setMensagens(response.data))
-    }, []);
-
-
+    }, [])
     return (
-        <div class="message-box">
+        <div className="message-box">
 
             {
-                mensagens.map((mensagem, index) => {
+                mensagens.map((mensagem, id) => {
                     return (
-                        <Mensagem message={mensagem}key={index} />
+                        <Mensagem message={mensagem} key={id} />
                     )
                 })
             }
-            </div>
+        </div>
     );
 }
 
