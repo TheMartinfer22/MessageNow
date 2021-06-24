@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### ReactJS ###
+/UpList-React/node_modules/
+/UpList-React/README.md
