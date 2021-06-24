@@ -9,10 +9,12 @@ const EnviarMensagem = (props) => {
 
     function addReaction() {
         axios.get(`http://localhost:8080/reaction/${props.message.id}/add`)
+        setCount(+1)
     }
 
     function removeReaction() {
         axios.get(`http://localhost:8080/reaction/${props.message.id}/remove`)
+        setCount(-1)
     }
 
     function deleteMensagem(){
