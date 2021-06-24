@@ -1,9 +1,22 @@
+.title {
+    font-size: 50px;
+}
+
 .mensagem {
     width: auto;
     height: auto;
     display: flex;
     align-items: center;
     padding: 3px;
+}
+
+.not_selected {
+    -webkit-touch-callout: none;  /* iPhone OS, Safari */
+    -webkit-user-select: none;    /* Chrome, Safari 3 */
+    -khtml-user-select: none;     /* Safari 2 */
+    -moz-user-select: none;       /* Firefox */
+    -ms-user-select: none;        /* IE10+ */
+    user-select: none;            
 }
 
 .up_down_delete {
@@ -19,7 +32,7 @@
 }
 
 .form-write-message{
-    padding: 60px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
