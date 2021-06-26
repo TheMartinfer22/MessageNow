@@ -13,9 +13,9 @@ class EscreverMensagem extends Component {
     }
 
     async _postMessage(evento) {
-//        evento.preventDefault();
-//        evento.stopPropagation();
-        this.props.criarMensagem(this.texto);
+       evento.preventDefault();
+       evento.stopPropagation();
+       this.props.criarMensagem(this.texto);
     }
 
     render() {
