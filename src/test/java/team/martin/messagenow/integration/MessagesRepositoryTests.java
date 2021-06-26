@@ -1,4 +1,4 @@
-package team.martin.uplist.integration;
+package team.martin.messagenow.integration;
 
 import org.junit.Rule;
 import org.junit.jupiter.api.Assertions;
@@ -8,8 +8,8 @@ import org.opentest4j.AssertionFailedError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import team.martin.uplist.entity.MessagesEntity;
-import team.martin.uplist.repository.MessagesRepository;
+import team.martin.messagenow.entity.MessagesEntity;
+import team.martin.messagenow.repository.MessagesRepository;
 import org.junit.Test;
 
 /*
@@ -72,4 +72,3 @@ public class MessagesRepositoryTests {
         Assertions.assertEquals(messagesEntity.getMessage(), "Mensagem que não é igual a variável mensagem");
     }
 }
-

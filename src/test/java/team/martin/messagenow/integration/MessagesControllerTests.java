@@ -1,4 +1,4 @@
-package team.martin.uplist.integration;
+package team.martin.messagenow.integration;
 
 
 import org.junit.Test;
