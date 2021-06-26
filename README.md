@@ -1,4 +1,4 @@
-# UpList - Site
+# MessageNow - Site
 
 O projeto foi realizado em ReactJS, na qual possibilita uma união entre JS, HTML e CSS facilitando assim a visualização do projeto e sua manutenção.
 
@@ -10,4 +10,3 @@ O projeto foi realizado em ReactJS, na qual possibilita uma união entre JS, HTM
 
 - `npm start`
 
-<p align="center"> <img src="https://i.imgur.com/GkcOilV.png"/>
