@@ -34,5 +34,4 @@ build/
 
 
 ### ReactJS ###
-/UpList-React/node_modules/
-/UpList-React/README.md
+node_modules/
