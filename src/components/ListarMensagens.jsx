@@ -16,7 +16,7 @@ const ListarMensagens = () => {
 //    });
 
     useEffect(() => {
-        axios.get("http://localhost:8080/").then(response => setMensagens(response.data))
+        axios.get("http://40.124.42.151:8080/").then(response => setMensagens(response.data))
     }, [])
     return (
         <div className="message-box">
