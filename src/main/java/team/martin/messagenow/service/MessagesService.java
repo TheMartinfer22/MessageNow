@@ -1,9 +1,9 @@
-package team.martin.uplist.service;
+package team.martin.messagenow.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import team.martin.uplist.entity.MessagesEntity;
-import team.martin.uplist.repository.MessagesRepository;
+import team.martin.messagenow.entity.MessagesEntity;
+import team.martin.messagenow.repository.MessagesRepository;
 
 import java.util.List;
 

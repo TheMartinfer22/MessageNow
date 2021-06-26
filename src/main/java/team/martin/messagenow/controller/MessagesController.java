@@ -1,9 +1,9 @@
-package team.martin.uplist.controller;
+package team.martin.messagenow.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import team.martin.uplist.entity.MessagesEntity;
-import team.martin.uplist.service.MessagesService;
+import team.martin.messagenow.entity.MessagesEntity;
+import team.martin.messagenow.service.MessagesService;
 
 import javax.validation.constraints.NotEmpty;
 import java.util.List;

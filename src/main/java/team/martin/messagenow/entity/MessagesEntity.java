@@ -1,4 +1,4 @@
-package team.martin.uplist.entity;
+package team.martin.messagenow.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonValue;
