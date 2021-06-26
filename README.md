@@ -10,8 +10,4 @@ O projeto foi realizado em ReactJS, na qual possibilita uma união entre JS, HTM
 
 - `npm start`
 
-## Bibliotecas Utilizadas
-
--
-
-## Documentação de aplicação
+<img align="center" height="300" src="https://i.imgur.com/GkcOilV.png"/>
