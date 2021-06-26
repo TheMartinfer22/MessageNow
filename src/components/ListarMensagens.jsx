@@ -8,16 +8,16 @@ const ListarMensagens = () => {
 
     const [mensagens, setMensagens] = useState([])
 
-//    React.useEffect(() => {
-//        const timeoutID = window.setTimeout(() => {
-//            axios.get("http://40.124.42.151:8080/").then(response => setMensagens(response.data))
-//        }, 500);
-//        return () => window.clearTimeout(timeoutID);
-//    });
+   useEffect(() => {
+       const timeoutID = window.setTimeout(() => {
+           axios.get("http://40.124.42.151:8080/").then(response => setMensagens(response.data))
+       }, 500);
+       return () => window.clearTimeout(timeoutID);
+   });
 
-    useEffect(() => {
-        axios.get("http://40.124.42.151:8080/").then(response => setMensagens(response.data))
-    }, [])
+    // useEffect(() => {
+    //     axios.get("http://40.124.42.151:8080/").then(response => setMensagens(response.data))
+    // }, [])
     return (
         <div className="message-box">
 

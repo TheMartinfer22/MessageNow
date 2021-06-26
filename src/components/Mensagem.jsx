@@ -18,7 +18,7 @@ const EnviarMensagem = (props) => {
 
   async function deleteMensagem(){
     await axios.delete(`http://40.124.42.151:8080/${props.message.id}/delete`);
-    window.location.reload();
+    // window.location.reload();
   }
 
   return (
