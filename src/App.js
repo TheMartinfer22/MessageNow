@@ -12,7 +12,7 @@ class App extends Component {
         alert("Você não pode deixar o campo vazio")
       )
     } else {
-      axios.post("http://localhost:8080/", {
+      axios.post("http://40.124.42.151:8080/", {
         message: mensagem
       })
     }

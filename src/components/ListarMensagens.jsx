@@ -10,7 +10,7 @@ const ListarMensagens = () => {
 
 //    React.useEffect(() => {
 //        const timeoutID = window.setTimeout(() => {
-//            axios.get("http://localhost:8080/").then(response => setMensagens(response.data))
+//            axios.get("http://40.124.42.151:8080/").then(response => setMensagens(response.data))
 //        }, 500);
 //        return () => window.clearTimeout(timeoutID);
 //    });
