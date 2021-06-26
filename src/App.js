@@ -20,13 +20,11 @@ class App extends Component {
 
   render() {
     return (
-      <center>
         <section>
           <Title />
           <EscreverMensagem criarMensagem={this.criarMensagem} />
-          <ListarMensagens/>
+        <ListarMensagens/>
         </section>
-      </center>
     );
   }
 }
