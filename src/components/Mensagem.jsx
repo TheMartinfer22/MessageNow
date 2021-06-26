@@ -2,8 +2,6 @@ import {React, useState} from 'react'
 import "./css/styles.css"
 import axios from "axios";
 
-require('dotenv').config()
-
 const EnviarMensagem = (props) => {
 
     const[count, setCount] = useState(props.message.reactions);
@@ -11,15 +9,15 @@ const EnviarMensagem = (props) => {
     function addReaction() {
         axios.get(`http://localhost:8080/reaction/${props.message.id}/add`)
         setCount(count +1)
-    }   
+    }
 
-    function removeReaction() {
+    async function removeReaction() {
         axios.get(`http://localhost:8080/reaction/${props.message.id}/remove`)
         setCount(count -1)
     }
 
-    function deleteMensagem(){
-        axios.delete(`http://localhost:8080/${props.message.id}/delete`);
+    async function deleteMensagem(){
+        await axios.delete(`http://localhost:8080/${props.message.id}/delete`);
         window.location.reload();
     }
 
