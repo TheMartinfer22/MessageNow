@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface MessagesRepository extends JpaRepository<MessagesEntity, Long> {
-
     List<MessagesEntity> findByOrderByReactionsDesc();
 }

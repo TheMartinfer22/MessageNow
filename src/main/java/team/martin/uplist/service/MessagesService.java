@@ -18,29 +18,42 @@ public class MessagesService {
 
     // MENSAGEM (Service)
 
-    /*
-     * Criará as mensagens recebidas para o banco de dados.
+    /**
+     * Criará as mensagem que foi recebida para o banco de dados.
+     *
+     * @param message Recebe a mensagem no formato String.
+     * @return MessagesEntity - retorna a entidade criada em JSON com Long Id, String message, long reactions.
      */
-    public MessagesEntity createMessage(MessagesEntity message) throws Exception {
-        if (message.getMessage().isEmpty()){
-            throw new Exception();
-        }
+    public MessagesEntity createMessage(MessagesEntity message)  {
         return messagesRepository.save(message);
     }
 
+
+    /**
+     * Irá retornar uma lista de MessagesEntity.
+     *
+     * @return List<MessagesEntity> - retorna TODAS entidades do banco de dados com Long Id, String message, long reactions.
+     */
     public List<MessagesEntity> listMessages() {
         return messagesRepository.findByOrderByReactionsDesc();
     }
 
+    /**
+     * Deleta a mensagem pelo endpoint ao fornecer a ID da mesma.
+     *
+     * @param id Long - Irá deletar a mensagem ao ser passada a identicação da mesma.
+     */
     public void removeMessage(Long id){
         messagesRepository.deleteById(id);
     }
 
     // REACTIONS (Service)
 
-    /*
+    /**
      * Adiciona as reações esperando a ID fornecida pelo controller e incrementando + 1,
      * Após, salvando o mesmo para atualizar a mudança.
+     *
+     * @param id Long - Adiciona uma reação a mensagem.
      */
     public void addReaction(Long id) {
         MessagesEntity messagesEntity = messagesRepository.getById(id);
@@ -49,9 +62,11 @@ public class MessagesService {
         messagesRepository.save(messagesEntity);
     }
 
-    /*
+    /**
      * Remove as reações esperando a ID fornecida pelo controller e diminuindo - 1,
      * Após, salvando o mesmo para atualizar a mudança.
+     *
+     * @param id Long - Remove uma reação da mensagem.
      */
     public void removeReaction(Long id) {
         MessagesEntity messagesEntity = messagesRepository.getById(id);
