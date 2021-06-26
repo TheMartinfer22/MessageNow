@@ -10,4 +10,4 @@ O projeto foi realizado em ReactJS, na qual possibilita uma união entre JS, HTM
 
 - `npm start`
 
-<img align="center" height="300" src="https://i.imgur.com/GkcOilV.png"/>
+<p align="center"> <img src="https://i.imgur.com/GkcOilV.png"/>
