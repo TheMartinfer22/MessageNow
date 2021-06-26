@@ -2,7 +2,7 @@
 
 ⚙️ **Sobre**
 
-O projeto consiste em uma página onde você pode colocar qualquer tipo de texto e reagir em textos criados por outros usuários.
+A API foi realizada no Spring Framework, a documentação está inclusa basta somente realizar a utilização.
 
 ⚙️ **Tecnologias utilizadas**
 
