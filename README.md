@@ -6,7 +6,9 @@ O projeto foi realizado em ReactJS, na qual possibilita uma união entre JS, HTM
 
 #### ⚡️ **Inicialização**
 
-- `git clone --branch website https://github.com/TheMartinfer22/Projeto-UpList.git`
+- `git clone --branch site https://github.com/TheMartinfer22/MessageNow.git`
+
+- `cd cd MessageNow/`
 
 - `npm install`
 
