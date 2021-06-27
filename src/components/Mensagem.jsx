@@ -24,7 +24,7 @@ const EnviarMensagem = (props) => {
   return (
     <div className="content-mensagem">
       <div className="mensagem">
-        <div class="mensagem-reactions">
+        <div className="mensagem-reactions">
           <svg onClick={() => addReaction()} xmlns="http://www.w3.org/2000/svg" className="up_down_delete" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="16" y1="9" x2="12" y2="5"></line><line x1="8" y1="9" x2="12" y2="5"></line></svg>
           <p className="not_selected">{count}</p>
           <svg onClick={() => removeReaction()} xmlns="http://www.w3.org/2000/svg" className="up_down_delete" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="16" y1="15" x2="12" y2="19"></line><line x1="8" y1="15" x2="12" y2="19"></line></svg>
