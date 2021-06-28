@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import team.martin.messagenow.entity.MessagesEntity;
 import team.martin.messagenow.repository.MessagesRepository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -25,9 +26,9 @@ public class MessagesService {
      * @return MessagesEntity - retorna a entidade criada em JSON com Long Id, String message, long reactions.
      */
     public MessagesEntity createMessage(MessagesEntity message)  {
+        message.setCreatedAt(LocalDateTime.now());
         return messagesRepository.save(message);
     }
-
 
     /**
      * Irá retornar uma lista de MessagesEntity.

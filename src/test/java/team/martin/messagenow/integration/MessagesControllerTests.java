@@ -33,13 +33,15 @@ public class MessagesControllerTests {
 
         // URL e criação da mensagem
         URI uri = new URI("/");
-        String criarMensagem = "{\"message\":\"hello world\"}";
+        String criarMensagem = "{\"message\":\"Hello World\"}";
 
         // Criação da requisição post e aguardo da resposta 201 para verificar se foi criado.
         mockMvc.perform(MockMvcRequestBuilders.post((uri))
                 .content(criarMensagem)
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(MockMvcResultMatchers.status().is(201));
+                .andExpect(MockMvcResultMatchers.status().is(201))
+                .andExpect(MockMvcResultMatchers.jsonPath("message").value("Hello World"));
+
     }
 
     @Test
@@ -53,8 +55,8 @@ public class MessagesControllerTests {
         mockMvc.perform(MockMvcRequestBuilders.post((uri)).content(criarMensagem).contentType(MediaType.APPLICATION_JSON));
 
         // Adicionar e Remover reaçções por requisição get no endpoint reaction/{id}/add e remove.
-        mockMvc.perform(MockMvcRequestBuilders.get("/reaction/1/add"));;
-        mockMvc.perform(MockMvcRequestBuilders.get("/reaction/1/remove"));;
+        mockMvc.perform(MockMvcRequestBuilders.get("/reaction/1/add"));
+        mockMvc.perform(MockMvcRequestBuilders.get("/reaction/1/remove"));
     }
 
     @Test
@@ -94,5 +96,4 @@ public class MessagesControllerTests {
         // Teste no endpoint root /{id}/delete para deletar uma mensagem e ver se é possível
         mockMvc.perform(MockMvcRequestBuilders.delete((uri + "1/delete")));
     }
-
 }
