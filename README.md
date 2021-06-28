@@ -10,5 +10,7 @@
 [Site](https://github.com/TheMartinfer22/Projeto-UpList/tree/website)
 |
 [API](https://github.com/TheMartinfer22/Projeto-UpList/tree/api)
+  
+  Funcionamento & Instalação: https://youtu.be/1fUtkYUKdX0
 
 </div>
