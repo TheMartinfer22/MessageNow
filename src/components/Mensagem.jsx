@@ -7,17 +7,17 @@ const EnviarMensagem = (props) => {
   const[count, setCount] = useState(props.message.reactions);
 
   function addReaction() {
-    axios.get(`http://40.124.42.151:8080/reaction/${props.message.id}/add`)
+    axios.get(`http://localhost:8080/reaction/${props.message.id}/add`)
     setCount(count +1)
   }
 
   async function removeReaction() {
-    axios.get(`http://40.124.42.151:8080/reaction/${props.message.id}/remove`)
+    axios.get(`http://localhost:8080/reaction/${props.message.id}/remove`)
     setCount(count -1)
   }
 
   async function deleteMensagem(){
-    await axios.delete(`http://40.124.42.151:8080/${props.message.id}/delete`);
+    await axios.delete(`http://localhost:8080/${props.message.id}/delete`);
     // window.location.reload();
   }
 
