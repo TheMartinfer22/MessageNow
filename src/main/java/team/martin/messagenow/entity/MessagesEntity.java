@@ -30,8 +30,6 @@ public class MessagesEntity {
     private long reactions;
 
     @Column(name = "created_at")
-    @NotEmpty(message = "A data de criação não pode estar vazia.")
-    @NotNull(message = "A data de criação não pode ser nula.")
     private LocalDateTime createdAt;
 
     public MessagesEntity(String message) {
